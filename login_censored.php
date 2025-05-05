@@ -12,7 +12,6 @@ $error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // In a real-world scenario, you should store this in a config file
     $stored_hash = '$2y$10sddddTwFH9RRP324324BbgGglrm'; // use utils/generate_hash.php to create a new hash
-    
     $password = $_POST['password'] ?? '';
     
     if (password_verify($password, $stored_hash)) {
@@ -73,8 +72,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="mt-3 text-center">
                     <small class="text-muted">Use the password hash generator to create a new password.</small>
                 </div>
+                
+                <div class="mt-4 d-grid">
+                    <a href="https://blog.andierni.ch" class="btn btn-outline-secondary">
+                        <i class="bi bi-arrow-left"></i> Go to Blog
+                    </a>
+                </div>
             </div>
         </div>
     </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
 </body>
 </html> 
